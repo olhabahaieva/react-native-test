@@ -1,22 +1,28 @@
 import React from "react";
-import { View, Image, StyleSheet, TextInput, Button } from "react-native";
+import {
+  View,
+  StyleSheet,
+  TextInput,
+  Text,
+  ImageBackground,
+} from "react-native";
 
 const RegistrationScreen = () => {
   return (
     <>
       <View style={styles.container}>
-        <View style={styles.contentContainer}>
-          <TextInput style={styles.input} value="Логін" />
-          <TextInput style={styles.input} value="Адреса електронної пошти" />
-          <TextInput style={styles.input} value="Пароль" />
-          <Button title="Зареєстуватися"/>
-          <Button title="Вже є акаунт? Увійти"/>
-        </View>
-
-        <Image
-          source={require("../../assets/bcg-image.jpg")}
+        <ImageBackground
           style={styles.backgroundImage}
-        />
+          source={require("../../assets/bcg-image.jpg")}
+        >
+          <View style={styles.contentContainer}>
+            <TextInput style={styles.input} value="Логін" />
+            <TextInput style={styles.input} value="Адреса електронної пошти" />
+            <TextInput style={styles.input} value="Пароль" />
+            <Text title="Зареєстуватися" />
+            <Text title="Вже є акаунт? Увійти" />
+          </View>
+        </ImageBackground>
       </View>
     </>
   );
@@ -54,9 +60,9 @@ const styles = StyleSheet.create({
   backgroundImage: {
     flex: 1,
     resizeMode: "cover",
-    // position: "absolute",
-    // top: 0,
-    // left: 0,
+    position: "absolute",
+    top: 0,
+    left: 0,
     width: "100%",
     height: "100%",
   },
